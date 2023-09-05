@@ -1,0 +1,22 @@
+.list { 
+    width: 75%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.content { 
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 100px 0;
+}
+@media (max-width:660px) {
+    .list { 
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}

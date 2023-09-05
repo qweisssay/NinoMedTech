@@ -1,0 +1,73 @@
+.blur { 
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: blur .4s ease;
+}
+.container { 
+    position: absolute;
+    top: 61px;
+    right: 0;
+    height: 100%;
+    width: 50vw;
+    background: #fff;
+    animation: slide .8s ease ;
+    z-index: 1000;
+}
+.list { 
+    margin: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btn { 
+    background: none;
+}
+.btn> svg> rect { 
+    transition: all .8s ease;
+}
+.btn > svg> rect:nth-child(2n) { 
+    transform: translateX(3px);
+}
+.btn > svg> rect:nth-child(3n) { 
+    transform: translateX(6px);
+}
+.btn.active > svg> rect { 
+    fill: var(--blue);
+    transform: none;
+}
+
+.link { 
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: none;
+    }
+}
+@keyframes blur {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (min-width:660px) {
+    .content { 
+        display: none;
+    }
+}    

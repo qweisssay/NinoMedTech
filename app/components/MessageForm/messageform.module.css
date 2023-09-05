@@ -1,0 +1,81 @@
+.blur { 
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.blur > div { 
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    padding: 40px;
+    width: calc(50% - 80px);
+    background-color: #fff;
+    border-radius: 25px;
+    
+}
+.blur > div > h2  { 
+    margin-bottom: 40px;
+}
+.form { 
+    
+    display: flex;
+    flex-direction: column;
+    
+    width: calc(100% - 30px);
+    gap: 40px;
+    
+   
+}
+.item { 
+    display: flex;
+    flex-direction: column;
+}
+.label { 
+    font-size: 16px;
+    
+    width: fit-content;
+}
+.input { 
+    border: none;
+    padding: 10px 0px;
+    
+    border-bottom: 1px solid black;
+}
+.input:focus { 
+    outline: none;
+}
+.button { 
+    background-color: var(--blue);
+    width: fit-content;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    cursor: pointer;
+    transition: all .4s ease; 
+}
+@media (max-width:660px) {
+    .form { 
+    
+        display: flex;
+        flex-direction: column;
+        
+        width: calc(100% - 30px);
+        gap: 10px;
+        
+       
+    }
+    .blur > div { 
+        padding: 5px;
+        width: calc(100% - 10px);
+        left: 15px;
+   
+    }
+}

@@ -1,0 +1,68 @@
+
+.item { 
+  width: calc(25% - 7.5px);
+  animation-duration: 2s;
+  animation-name: slidein;
+  box-shadow: 0px 2px 15px rgba(0, 0,0, .2);
+  display: inline-block;
+  
+}
+.card { 
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: background .5s ease;
+    
+    
+}
+
+.card:hover { 
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.img { 
+    height: 200px;
+}
+.heading { 
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.price { 
+  font-size: 16px;
+  color: var(--text-color);
+}
+.link { 
+  font-size: 18px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+  
+
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    
+  }
+  
+  to {
+    opacity: 1;
+    
+  }
+}
+@media (max-width: 1200px)  {
+  .item { 
+    width: calc(50% - 5px);
+  }
+}
+@media (max-width: 660px)  {
+  .item { 
+    width: 100%;
+  }
+}

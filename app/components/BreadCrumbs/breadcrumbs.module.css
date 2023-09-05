@@ -1,0 +1,20 @@
+.breadcrumbs { 
+    display: flex;
+    gap: 10px;
+}
+.item, .item > a { 
+    color: #454545;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all .4s ease;
+}
+.item:not(:last-child)::after { 
+    content: '\27F6';
+    margin-left: 5px;
+    transition: all .4s ease;
+}
+.item:hover,.item:hover > a,.item:hover::after {
+    
+
+    color: var(--blue);
+}

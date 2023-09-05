@@ -1,0 +1,119 @@
+.content { 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 50px 0;
+    
+}
+.descriptionData { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.1) ;
+}
+.data { 
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 600px;
+}
+.heading { 
+    font-size: 34px;
+    text-transform: uppercase;
+}
+.priceInf { 
+    font-size: 16px ;
+    
+}
+.price { 
+    font-size: 24px;
+    font-weight: 500;
+}
+.description { 
+    font-size: 16px;
+    color: #454545;
+    
+}
+.btnGroup { 
+    display: flex;
+    gap: 15px;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 13px;
+    border: 2px solid var(--blue);
+    font-size: 16px;
+    border-radius: 25px;
+    color: white;
+    background-color: var(--blue);
+    transition: all .4s ease;
+}
+.btn:hover {
+    color: var(--blue);
+    background-color: #fff;
+    
+}
+
+.icon > path { 
+    fill: white;
+    transition: all .4s ease;
+}
+.btn:hover > .icon > path { 
+    fill: var(--blue);
+}
+.image { 
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: contain;
+}
+.characteristic { 
+    margin-top: 100px;
+    padding: 40px 15px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+.eror { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.code { 
+    font-size: 54px;
+}
+.code::first-letter { 
+    color: var(--blue);
+}
+.code::after { 
+    content: '4';
+    color: var(--blue);
+}
+.erorMessage { 
+    font-size: 34px;
+    font-weight: 600;
+    text-align: center;
+}
+.link { 
+    color: #fff;
+    background-color: var(--blue);
+    border-radius: 25px;
+    padding: 10px 15px;
+}
+@media (max-width: 660px)  {
+    .content { 
+        flex-direction: column-reverse;
+        align-items: center;
+        
+    }
+    .image { 
+        max-width: calc(100% - 30px);
+        max-height: 300px;
+        object-fit: contain;
+        margin-bottom: 30px;
+        background-color: #c5c5c5;
+        padding: 15px;
+    }
+} 

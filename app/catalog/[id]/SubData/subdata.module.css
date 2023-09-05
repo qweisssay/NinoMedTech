@@ -1,0 +1,41 @@
+.subData { 
+    width: 100%;
+    padding: 20px 0;
+    border-top: 2px solid rgba(0,0,0,0.1);
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.btn { 
+    background: none;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 20px 0;
+    
+}
+
+.itemsContainer { 
+    
+    width: 100%;
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: all .4s ease;
+}
+.itemsContainer.open { 
+    grid-template-rows: 1fr;
+}
+.items { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+.item { 
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+    color: #454545;
+}
