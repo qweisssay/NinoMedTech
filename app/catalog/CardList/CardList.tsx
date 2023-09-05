@@ -5,6 +5,7 @@ import { useEffect, useState,useRef } from 'react';
 import { Card } from '@/app/components/Card/Card';
 import { iCard, iList } from '@/app/types/Product';
 import { getByParams} from '@/app/helpers/getProducts';
+import { LoadIcon } from '@/app/components/LoadIcon/LoadIcon';
 
 export function CardList ({category,search,brand,orderedBy}:iList) {
     const [cards,setCards] = useState<iCard[]>([])
@@ -40,7 +41,7 @@ export function CardList ({category,search,brand,orderedBy}:iList) {
                     ))}
 
                 <div ref={oberverRef}></div>
-                {isFetching && <p>Загрузка...</p>}
+                {isFetching && <p><LoadIcon></LoadIcon></p>}
             
         </>
     )

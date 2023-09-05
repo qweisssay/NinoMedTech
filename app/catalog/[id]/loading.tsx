@@ -1,7 +1,9 @@
+import { LoadIcon } from "@/app/components/LoadIcon/LoadIcon";
+
 export default function ProductLoading () { 
     return (
         <>
-            <h1>Product Loading</h1>
+            <LoadIcon></LoadIcon>
         </>
     )
 }

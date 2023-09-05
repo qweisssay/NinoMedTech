@@ -1,8 +1,11 @@
+import { LoadIcon } from "../components/LoadIcon/LoadIcon";
 
 
 
 export default function LoadingCatalog () {
     return (
-        <div>Loading...</div>
+        <div>
+            <LoadIcon></LoadIcon>
+        </div>
     )
 }

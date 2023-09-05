@@ -3,9 +3,10 @@ import { iBrand } from "../types/Product";
 export type getBrandsData = { 
     brands: iBrand[]
 }
+const api = process.env.API_URL || `http://localhost:3000/api`
 export async function getBrandById (id:number):Promise<{item:iBrand} | null> { 
   try {
-      const res = await fetch(`http://localhost:3000/api/brands/${id}`,{next: {
+      const res = await fetch(`${api}/brands/${id}`,{next: {
           revalidate: 60
       }});
       return res.json()
@@ -16,7 +17,7 @@ export async function getBrandById (id:number):Promise<{item:iBrand} | null> {
 }
 export async function getBrands ():Promise<getBrandsData> { 
     try {
-      const res = await fetch(`http://localhost:3000/api/brands`,{
+      const res = await fetch(`${api}/brands`,{
         next: {
             revalidate: 60
         }
