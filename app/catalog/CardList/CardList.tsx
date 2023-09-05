@@ -4,7 +4,7 @@ import { useEffect, useState,useRef } from 'react';
 
 import { Card } from '@/app/components/Card/Card';
 import { iCard, iList } from '@/app/types/Product';
-import { getByParams} from '@/app/helpers/getProducts';
+import { getByParams} from '@/app/helpers/apiHandlers';
 import { LoadIcon } from '@/app/components/LoadIcon/LoadIcon';
 
 export function CardList ({category,search,brand,orderedBy}:iList) {

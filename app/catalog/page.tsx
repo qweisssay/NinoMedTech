@@ -1,13 +1,12 @@
 
 import style from './catalog.module.css'
 import { Card } from '../components/Card/Card'
-import { getByParams } from '../helpers/getProducts'
+import { getByParams,getBrands,getCategories } from '../helpers/apiHandlers'
 import { BreadCrumbs } from '../components/BreadCrumbs/BreadCrumbs'
-import { getCategoryById } from '../helpers/getCategories'
+
 import { CardList } from './CardList/CardList'
 import { Search } from '../components/Search/Search'
-import { getCategories } from '../helpers/getCategories'
-import { getBrands } from '../helpers/getBrands';
+
 import { CatalogSettings } from '../components/CatalogSettings/CataogSettings'
 import { getCategoryData } from '@/utils/getProductData'
 export default async function Catalog({searchParams}:{searchParams:{[key: string]: string | string[] | undefined}}) {

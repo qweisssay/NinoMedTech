@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import style from './card.module.css';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { currencyFormat } from '@/app/helpers/currencyFormat';
 import { iCard } from '@/app/types/Product';
 export function Card ({name,price,id,image}:iCard) { 

@@ -1,4 +1,4 @@
-import { getProductById } from "@/app/helpers/getProducts"
+
 
 import { currencyFormat } from "@/app/helpers/currencyFormat"
 import style from './product.module.css'

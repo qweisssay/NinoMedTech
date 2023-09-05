@@ -1,26 +1,17 @@
-import { iResult } from "../types/Product";
-import { iParams,iCard } from "../types/Product";
+const api = process.env.API_URL || `http://localhost:3000/api`;
+
+import { iBrand,iCategory,iParams,iCard  } from "../types/Product";
 import { removeNullUndefinedFields } from "./removeNullUndefinedFields";
 
 
-interface iTest { 
-    page?:number,size?:number,search?:string
+export type getBrandsData = { 
+    brands: iBrand[]
 }
-export async function getProductById (id:number):Promise<iResult | null> { 
-    console.log(process.env.APP_IP)
-    try {
-        const res = await fetch(`http://localhost:3000/api/products/${id}`,{next: {
-            revalidate: 60
-        }});
-        return res.json()
-      } catch (error) {
-          console.log(error)
-          return null
-      } 
-}
+
+
 export async function getProductsByName (name:string):Promise<{products:iCard[]} > { 
     try {
-        const res = await fetch(`http://localhost:3000/api/products?search=${name}`,{next: {
+        const res = await fetch(`${api}/products?search=${name}`,{next: {
             revalidate: 60
         }});
         return res.json()
@@ -31,7 +22,7 @@ export async function getProductsByName (name:string):Promise<{products:iCard[]}
 }
 
 export async function getProducts (page?:number,size?:number,search?:string):Promise<{products:iCard[]}> { 
-    let URL = `http://localhost:3000/api/products`
+    let URL = `${api}/products`
     if(page&&size) {
         URL = `${URL}?page=${page}&size=${size}`
     } 
@@ -62,7 +53,7 @@ export function paramsTostring ({brand = null,category,size,skip ,orderedBy,sear
 }
 export async function getByParams (props:iParams):Promise<{products:iCard[]}> { 
     
-    const source = `http://localhost:3000/api/products?${paramsTostring(props)}`
+    const source = `${api}/products?${paramsTostring(props)}`
     console.log(source)
     
     try {
@@ -74,5 +65,36 @@ export async function getByParams (props:iParams):Promise<{products:iCard[]}> {
       } catch (error) {
           console.log(error)
           return {products:[]}
+      } 
+}
+
+
+
+
+export async function getBrands ():Promise<getBrandsData> { 
+    try {
+      const res = await fetch(`${api}/brands`,{
+        next: {
+            revalidate: 60
+        }
+      });
+      return res.json()
+    } catch (error) {
+        console.log(error)
+        return {brands:[]}
+    } 
+}
+
+
+export async function getCategories ():Promise<{categories:iCategory[]}> { 
+    try {
+        const res = await fetch(`${api}/categories`,{next: {
+            revalidate: 60
+        }});
+        
+        return res.json()
+      } catch (error) {
+          
+          return {categories:[]}
       } 
 }

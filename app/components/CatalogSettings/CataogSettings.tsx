@@ -1,7 +1,6 @@
 'use client'
 
 import { iCategory, iBrand } from '@/app/types/Product'
-import { removeNullUndefinedFields } from '@/app/helpers/removeNullUndefinedFields'
 import style from './catalogsettings.module.css'
 import Link from 'next/link'
 import { useState,useEffect } from 'react'

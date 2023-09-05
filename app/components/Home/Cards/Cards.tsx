@@ -3,7 +3,7 @@ import style from './cards.module.css'
 import { Container } from '../../Container/Container'
 import Link from 'next/link';
 import { Heading } from '../../Heading/Heading';
-import { getByParams } from '@/app/helpers/getProducts';
+import { getByParams } from '@/app/helpers/apiHandlers';
 
 
 

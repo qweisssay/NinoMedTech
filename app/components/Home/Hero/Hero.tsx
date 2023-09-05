@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PIC from '@/public/PHOTO.png'
 import { Slider } from '../../Slider/Slider';
-import { getByParams } from '@/app/helpers/getProducts';
+import { getByParams } from '@/app/helpers/apiHandlers';
 export async function Hero () {
     const res = await getByParams({skip:0,size:3})
     const CARDS = res.products

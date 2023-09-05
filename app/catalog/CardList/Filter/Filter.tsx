@@ -4,8 +4,8 @@ import { iBrand,iCategory } from '@/app/types/Product';
 import style from './filter.module.css'
 import {useState,useEffect} from 'react'
 import { LargeNumberLike } from 'crypto';
-import { getBrands } from '@/app/helpers/getBrands';
-import { getCategories } from '@/app/helpers/getCategories';
+import { getBrands,getCategories } from '@/app/helpers/apiHandlers';
+
 
 type iFilter = {
     setChosenBrands:(brand:string) => void,
