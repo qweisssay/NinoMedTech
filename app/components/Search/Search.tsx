@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import style from './search.module.css'
 import Link from 'next/link'
 
@@ -9,7 +9,7 @@ export function Search () {
     
 
     const [searchValue,setSearchValue] = useState('')
-    
+    const searchRef = useRef<HTMLAnchorElement>(null)
     
     useEffect(()=>{
         const handleSearch = (search:string) => {
@@ -34,9 +34,9 @@ export function Search () {
     
     return (
         <>
-            <form className={style.search } onSubmit={(e)=>{e.preventDefault()}} action="">
+            <form className={style.search } onSubmit={(e)=>{e.preventDefault();searchRef.current?.click()}} action="">
                 <input className={style.input} placeholder='Найти' value={searchValue} onChange={(e)=>{setSearchValue(e.currentTarget.value)}} type="text" />
-                <Link  className={ searchValue.length < 2 ? style.btn + ' ' + style.isDisabled : style.btn  } href={`/catalog?search=${searchValue}`}>найти</Link>
+                <Link ref={searchRef}  className={ searchValue.length < 2 ? style.btn + ' ' + style.isDisabled : style.btn  } href={`/catalog?search=${searchValue}`}>найти</Link>
             </form>
         </>
     )
